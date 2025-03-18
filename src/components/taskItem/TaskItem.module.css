@@ -16,12 +16,12 @@
 }
 
 .default {
-  background-color: #171717;
-  border-color: #272727;
+  background-color: #141414;
+  border-color: #bbb5b5;
 }
 
 .default:hover {
-  background-color: rgba(59, 121, 246, 0.03);
+  background-color: rgba(149, 180, 242, 0.03);
   border-color: rgba(59, 121, 246, 0.15);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .contentDefault {
-  color: white;
+  color: rgb(68, 68, 68);
 }
 
 .contentSuccess {
