@@ -1,19 +1,29 @@
 // Ce composant est utilisé pour afficher la liste des tâches.
 import { TaskItem } from "../taskItem/taskItem"
 import styles from "./TaskList.module.css"
+export const TaskList = ({
+  tasksList,
+  editTask,
+  deleteTask,
+  incompletedTasks,
+}) => {
+  const taskList = tasksList.map((task) => (
+    <TaskItem
+      key={task.id}
+      task={task}
+      editTask={editTask}
+      deleteTask={deleteTask}
+    />
+  ))
 
-export const TaskList = () => {
   return (
     <div className="box">
       <h2 className={styles.title}>
-        🗒️ Il te reste encore x tâches à accomplir !
+        🗒️ Il te reste encore {incompletedTasks} tâches à accomplir !
       </h2>
-      <ul className={styles.container}>
-        <TaskItem />
-        <TaskItem />
-        <TaskItem />
-        <TaskItem />
-      </ul>
+      {tasksList && tasksList.length > 0 && (
+        <ul className={styles.container}>{taskList}</ul>
+      )}
     </div>
   )
 }
